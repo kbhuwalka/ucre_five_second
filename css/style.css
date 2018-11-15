@@ -1,0 +1,21 @@
+[type="radio"]:checked+span:after{
+	border: 2px solid #F55443;
+	background-color: #F55443;
+}
+
+#positive-result,#negative-result {
+	display: none;
+}
+
+#options-holder {
+	margin-top: 36px;
+}
+
+.container {
+	margin-top: 40px;
+}
+
+nav {
+	background-color: transparent;
+	box-shadow: none;
+}
