@@ -3,19 +3,10 @@
 	background-color: #F55443;
 }
 
-#positive-result,#negative-result {
+#intro-container {
 	display: none;
-}
-
-#options-holder {
-	margin-top: 36px;
 }
 
 .container {
 	margin-top: 40px;
-}
-
-nav {
-	background-color: transparent;
-	box-shadow: none;
 }
