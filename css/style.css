@@ -3,6 +3,8 @@
 	background-color: #F55443;
 }
 
+#task-container, 
+#task-image-container,
 #intro-container,
 #incorrect-password-text {
 	display: none;
