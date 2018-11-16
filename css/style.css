@@ -3,7 +3,7 @@
 	background-color: #F55443;
 }
 
-#positive-result,#negative-result {
+#task-container, #task-image-container,#positive-result,#negative-result {
 	display: none;
 }
 

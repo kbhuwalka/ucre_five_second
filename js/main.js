@@ -1,3 +1,7 @@
+const USER_KEY = "user_key";
+
+var database = firebase.database();
+
 var question_number = 0;
 var problems = [
     {
@@ -51,9 +55,7 @@ const PROBLEMS_KEY = "problems";
 const ANSWERS_KEY = "user_answers";
 
 $(document).ready(function(){
-	// Start the timer
-	// startTimer(duration);
-	// var duration = 60; //in seconds
+	saveToLocalStorage(USER_KEY, "kunal");
 	loadQuestionIntoPage(0);
 	$("#next-question-btn").on("click", changeQuestion);
 	questions = getFromLocalStorage(PROBLEMS_KEY);
@@ -63,6 +65,18 @@ $(document).ready(function(){
 		var isOptionSelected = checkedOption.val() == undefined;
 		$("#next-question-btn").prop('disabled', isOptionSelected);
 	});
+
+  $("#show-task-image-btn").on("click", function(){
+    $("#task-image-container").fadeIn();
+    $("#show-task-image-btn").prop('disabled', true);
+    setTimeout(function(){
+      $("#show-task-image-btn").fadeOut();
+      $("#task-image-container").fadeOut(function(){
+        $("#task-container").fadeIn();
+      });
+      $("#show-task-image-btn").prop('disabled', false);
+  	},5000);
+  })
 
 });
 
@@ -127,5 +141,10 @@ function getFromLocalStorage(key){
  * Save an item to the localStorage with the given key
  */
 function saveToLocalStorage(key, value) {
+  firebase.database().ref('users/' + getUserId()+'/'+key).set(value);
 	localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getUserId(){
+  return getFromLocalStorage(USER_KEY);
 }

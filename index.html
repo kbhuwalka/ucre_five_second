@@ -1,6 +1,21 @@
 <!DOCTYPE html>
   <html>
     <head>
+      <!--Integrating Firebase into the web app-->
+      <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCOE2WV8kSW95eBw3uDTqtA1VvDKVWlzr0",
+          authDomain: "fivesecondtest.firebaseapp.com",
+          databaseURL: "https://fivesecondtest.firebaseio.com",
+          projectId: "fivesecondtest",
+          storageBucket: "fivesecondtest.appspot.com",
+          messagingSenderId: "698093801633"
+        };
+        firebase.initializeApp(config);
+      </script>
+
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -53,16 +68,36 @@
         </div>
       </div>
 
+      <div class="row container">
+          <div class="col center s12 m10 offset-m1">
+            <button class="btn waves-effect waves-light indigo" id="show-task-image-btn">
+              Show Image
+            </button>
+              <div class="card white darken-1" id="task-image-container">
+                  <div class="card-image">
+                    <img src="images/joyce.jpg" />
+                  </div>
+              </div>
+          </div>
+      </div>
+
       <!--JavaScript at end of body for optimized loading-->
+      <!-- JQuery CDN-->
       <script
           src="https://code.jquery.com/jquery-3.3.1.min.js"
           integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
           crossorigin="anonymous"></script>
+      <!-- Matrialize JavaScript -->
       <script
           type="text/javascript"
           src="js/materialize.min.js"></script>
+
+      <!-- Custom Scripts -->
       <script
           type="text/javascript"
           src="js/main.js"></script>
+          <script
+              type="text/javascript"
+              src="js/firebase.js"></script>
     </body>
   </html>
