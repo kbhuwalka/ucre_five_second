@@ -8,12 +8,9 @@ var user_answers = [];
 const passwords = new Set(["jazzy_1","fuzzy_2","muzzy_3","whizz_4","fezzy_5","fizzy_6","abuzz_7","zuzim_8","scuzz_9","dizzy_10","frizz_11","huzza_12","mezzo_13","pizza_14","jujus_15","tizzy_16","hajji_17","zazen_18","zanza_19","zizit_20","jumpy_21","tazza_22","jacky_23","tazze_24","zappy_25","jimmy_26","jimpy_27","jiffy_28","zippy_29","jemmy_30","quick_31","jammy_32","quack_33","junky_34","mujik_35","jocko_36","jugum_37","zaxes_38","zinky_39","jumps_40","jumbo_41","kudzu_42","quiff_43","jocks_44","kopje_45","jacks_46","quaky_47","quaff_48","jerky_49","jibbs_50","juicy_51","junks_52","furzy_53","zincy_54","zombi_55","jivey_56","zilch_57","jokey_58","jaggy_59","jukus_60","jambe_61","jambs_62","jiggy_63","juked_64","capiz_65","kanzu_66","enzym_67","jowly_68","klutz_69","zebec_70","jiffs_71","pujah_72","buxom_73","zingy_74","azuki_75","punji_76","mixup_77","unzip_78","quipu_79","jived_80","boozy_81","quirk_82","fjeld_83","gauzy_84","jupon_85","woozy_86","unjam_87","kanji_88","julep_89","qophs_90","jinks_91","jauks_92","junco_93","crazy_94","hamza_95","zonks_96","jouks_97","fuzed_98","fuzil_99","hafiz_100"]);
 
 $(document).ready(function(){
-  saveToLocalStorage(USER_KEY, undefined);
+  // saveToLocalStorage(USER_KEY, "{}");
   $("#submit-btn").on("click", checkPassword);
   $("#continue-btn").on("click", showDesign);
-  
-  $("#next-question-btn").on("click", changeQuestion);
-	questions = getFromLocalStorage(PROBLEMS_KEY);
 
 	$("#options-holder").on('change', function(){
 		var checkedOption = $('input[name=options]:checked');
@@ -25,12 +22,13 @@ $(document).ready(function(){
     $("#task-image-container").fadeIn();
     $("#show-task-image-btn").prop('disabled', true);
     setTimeout(function(){
-      $("#show-task-image-btn").fadeOut();
+      $("#intro-container").fadeOut();
       $("#task-image-container").fadeOut(function(){
         $("#task-container").fadeIn();
+        $("#show-task-image-btn").prop('disabled', false);
       });
-      $("#show-task-image-btn").prop('disabled', false);
   	},5000);
+  });
 });
 
 function checkPassword() {
@@ -105,7 +103,14 @@ function showDesign() {
  * Retrieve an item from the localStorage for the given key
  */
 function getFromLocalStorage(key){
-	return JSON.parse(localStorage.getItem(key));
+  var string = localStorage.getItem(key);
+  var object = undefined;
+  try{
+    object = JSON.parse(string)
+  } catch(err){
+
+  }
+	return object;
 }
 
 /*
