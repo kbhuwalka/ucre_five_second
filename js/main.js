@@ -12,24 +12,31 @@ $(document).ready(function(){
   $("#submit-btn").on("click", checkPassword);
   $("#continue-btn").on("click", showDesign);
 
-	$("#options-holder").on('change', function(){
-		var checkedOption = $('input[name=options]:checked');
-		var isOptionSelected = checkedOption.val() == undefined;
-		$("#next-question-btn").prop('disabled', isOptionSelected);
-	});
+	$("#options-holder").on('change', disableNextQuestionButton);
 
-  $("#show-task-image-btn").on("click", function(){
-    $("#task-image-container").fadeIn();
-    $("#show-task-image-btn").prop('disabled', true);
-    setTimeout(function(){
-      $("#intro-container").fadeOut();
-      $("#task-image-container").fadeOut(function(){
-        $("#task-container").fadeIn();
-        $("#show-task-image-btn").prop('disabled', false);
-      });
-  	},5000);
-  });
+  $("#show-task-image-btn").on("click", showImageForFive);
 });
+
+
+function showImageForFive(){
+  $("#task-image-container").fadeIn();
+  $("#show-task-image-btn").prop('disabled', true);
+  setTimeout(transitionFromImage,5000);
+}
+
+function transitionFromImage(){
+  $("#intro-container").fadeOut();
+  $("#task-image-container").fadeOut(function(){
+    $("#task-container").fadeIn();
+    $("#show-task-image-btn").prop('disabled', false);
+  });
+}
+
+function disableNextQuestionButton(){
+	var checkedOption = $('input[name=options]:checked');
+	var isOptionSelected = checkedOption.val() == undefined;
+	$("#next-question-btn").prop('disabled', isOptionSelected);
+}
 
 function checkPassword() {
   let password = $("#password").val();
