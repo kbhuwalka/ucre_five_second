@@ -3,10 +3,18 @@
 	background-color: #F55443;
 }
 
-#intro-container {
+#intro-container,
+#incorrect-password-text {
 	display: none;
 }
 
 .container {
 	margin-top: 40px;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }

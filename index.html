@@ -13,15 +13,19 @@
 
     <body class="grey darken-3">
       <div class="row container">
-        <div class="col s12 m10 offset-m1">
+        <div class="col s12 m8 offset-m2">
           <div class="card white darken-1" id="password-container">
             <div class="card-content grey-text text-darken-3">
-              <span class="card-title">Enter password</span>
-              <input id="password" type="password">
+              <span class="card-title">Enter your password to complete the task:</span>
+              <div class="input-field">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
+              <p class="red-text" id="incorrect-password-text">Incorrect password. Please try again.</p>
             </div>
-            <div class="card-action">
-              <button class="btn waves-effect waves-light" id="submit-btn">
-                Submit
+            <div class="card-action center">
+              <button class="btn waves-effect waves-light indigo" id="submit-btn">
+                Login
               </button>
             </div>
           </div>
@@ -46,6 +50,8 @@
           src="https://code.jquery.com/jquery-3.3.1.min.js"
           integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
           crossorigin="anonymous"></script>
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script
           type="text/javascript"
           src="js/materialize.min.js"></script>
