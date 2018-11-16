@@ -3,19 +3,20 @@
 	background-color: #F55443;
 }
 
-#task-container, #task-image-container,#positive-result,#negative-result {
+#task-container, 
+#task-image-container,
+#intro-container,
+#incorrect-password-text {
 	display: none;
-}
-
-#options-holder {
-	margin-top: 36px;
 }
 
 .container {
 	margin-top: 40px;
 }
 
-nav {
-	background-color: transparent;
-	box-shadow: none;
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }
