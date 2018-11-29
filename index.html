@@ -16,6 +16,7 @@
         firebase.initializeApp(config);
       </script>
 
+      <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700|Courgette" rel="stylesheet">
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -26,64 +27,33 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
-    <body class="grey darken-3">
-      <div class="row container">
-        <div class="col s12 m8 offset-m2">
-          <div class="card white darken-1" id="password-container">
-            <div class="card-content grey-text text-darken-3">
-              <span class="card-title">Enter your password to complete the task:</span>
-              <div class="input-field">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
-              </div>
-              <p class="red-text" id="incorrect-password-text">Incorrect password. Please try again.</p>
+    <body class="graph-background">
+      <div class="row landing-container">
+          <div class="col s12 m6 offset-m1 title">
+              <h2 class>Five Second Test</h2>
+          </div>
+          <div class="content">
+            <div class="col s12 m6 offset-m1">
+                <div class="warm-black-text">
+                  <p>It is a super simple method that can be used to evaluate a prototype or a design of a product. The user is show an image or a screenshot for 5 seconds of the prototype or the design, and then the image is taken away from the user.
+    You can then ask the users different questions about the design or the prototype. This also helps in eliciting an understanding of what the first impressions of the users are.</p>
+                </div>
             </div>
-            <div class="card-action center">
-              <button class="btn waves-effect waves-light indigo" id="submit-btn">
-                Login
-              </button>
+            <div class="col s12 m4 icon-container">
+              <img src="images/clock.svg">
             </div>
           </div>
-          <div class="card white darken-1" id="intro-container">
-            <div class="card-content grey-text text-darken-3">
-              <span class="card-title">You have 5 seconds to view our off-campus bus stop design and then answer a few questions.</span>
-            </div>
-            <div class="card-action center">
-              <button class="btn waves-effect waves-light indigo" id="show-task-image-btn">
-                Show Image
+          <div class="col s12 button-container">
+            <a href="demo.html">
+              <button class="button warm-black-text">
+                Demo
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row container">
-          <div class="col center s12 m10 offset-m1">
-              <div class="card white darken-1" id="task-image-container">
-                  <div class="card-image">
-                    <img src="images/joyce.jpg" />
-                  </div>
-              </div>
+            </a>
           </div>
       </div>
 
-      <div class="row container">
-        <div class="col s12 m10 offset-m1">
-          <div class="card white darken-1" id="task-container">
-            <div class="card-content grey-text text-darken-3">
-              <span class="card-title" id="question-span">Questions</span>
-              <form id="options-holder" class="grey-text text-darken-3">
 
-              </form>
-            </div>
-            <div class="card-action center">
-              <button class="btn waves-effect center waves-light red" id="next-question-btn" disabled="true">
-                Next
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       <!--JavaScript at end of body for optimized loading-->
       <!-- JQuery CDN-->

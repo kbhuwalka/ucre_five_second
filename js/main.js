@@ -15,10 +15,16 @@ $(document).ready(function(){
 	$("#options-holder").on('change', disableNextQuestionButton);
 
   $("#show-task-image-btn").on("click", showImageForFive);
+
+  $("#next-question-btn").on("click", function(){
+    $("#task-container").hide();
+    $("#finish-container").show();
+  })
 });
 
 
 function showImageForFive(){
+  $("#intro-container").hide();
   $("#task-image-container").fadeIn();
   $("#show-task-image-btn").prop('disabled', true);
   setTimeout(transitionFromImage,5000);
